@@ -178,7 +178,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">GCash QR</label>
-                    <img src="{{ asset('storage/QR_Code.jpg') }}" class="img-fluid" style="max-width:200px;">
+                    <img src="{{ asset('image/QR_Code.jpg') }}" class="img-fluid" style="max-width:200px;">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Upload GCash Payment Receipt</label>

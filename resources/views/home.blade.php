@@ -122,14 +122,14 @@
                         close-knit team committed to inspiring others through their art.
                     </p>
                     <a href="#viewImg1">
-                        <img src="{{ asset('storage/JBoldpic.jpg') }}" 
+                        <img src="{{ asset('images/JBoldpic.jpg') }}" 
                             alt="Description of image" 
                             class="card-img-top my-3" 
                             style="border-radius: 10px; cursor: pointer;">
                     </a>
                     <div id="viewImg1" class="lightbox">
                         <a href="#">
-                            <img src="{{ asset('storage/JBoldpic.jpg') }}">
+                            <img src="{{ asset('images/JBoldpic.jpg') }}">
                         </a>
                     </div>
                     <small>2018.</small>
@@ -150,7 +150,7 @@
                         join us for a musical experience like no other!</p>
                     <p></p>
                     <a href="#viewMap1">
-                        <img src="{{ asset('storage/JBGooglemap1.jpg') }}"
+                        <img src="{{ asset('images/JBGooglemap1.jpg') }}"
                             alt="Description of image"
                             class="card-img-top my-3"
                             style="border-radius: 10px; cursor: pointer;">
@@ -158,13 +158,13 @@
 
                     <div id="viewMap1" class="lightbox">
                         <a href="#">
-                            <img src="{{ asset('storage/JBGooglemap1.jpg') }}">
+                            <img src="{{ asset('images/JBGooglemap1.jpg') }}">
                         </a>
                     </div>
                     <small>This is view in Google Map.</small>
 
                     <a href="#viewMap2">
-                        <img src="{{ asset('storage/JBGooglemap.jpg') }}"
+                        <img src="{{ asset('images/JBGooglemap.jpg') }}"
                             alt="Description of image"
                             class="card-img-top my-3"
                             style="border-radius: 10px; cursor: pointer;">
@@ -172,7 +172,7 @@
 
                     <div id="viewMap2" class="lightbox">
                         <a href="#">
-                            <img src="{{ asset('storage/JBGooglemap.jpg') }}">
+                            <img src="{{ asset('images/JBGooglemap.jpg') }}">
                         </a>
                     </div>
                     <small>This is the where the BandRoom of JBrothersDBC.</small>
