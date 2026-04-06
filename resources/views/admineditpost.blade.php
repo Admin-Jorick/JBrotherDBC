@@ -112,8 +112,8 @@
                                 <div class="col-md-3 mb-4">
                                     <div class="d-flex flex-column align-items-center">
                                         <img src="{{ asset('storage/'.$img) }}" 
-                                             class="img-fluid rounded mb-2" 
-                                             style="max-height: 120px; object-fit: cover;">
+                                            class="img-fluid rounded mb-2" 
+                                            style="max-height: 120px; object-fit: cover;">
 
                                         <!-- Checkbox para i-mark yung image na ide-delete -->
                                         <div class="form-check">
