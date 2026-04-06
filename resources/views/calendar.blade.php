@@ -6,7 +6,7 @@
 <title>Calendar - JBrothers</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="{{ asset('obspalo_designs/css/style.css') }}" rel="stylesheet">
+<link href="/obspalo_designs/css/style.css" rel="stylesheet">
 <link rel="icon" type="image/jpg" href="{{ asset('storage/JBlogo.jpg') }}">
 
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
