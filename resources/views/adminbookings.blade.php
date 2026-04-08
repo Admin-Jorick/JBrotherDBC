@@ -237,29 +237,30 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
 
     // Decline = delete + remove UI
-    document.querySelectorAll('.declineForm').forEach(form => {
-        form.addEventListener('submit', function(e){
-            e.preventDefault();
+    //document.querySelectorAll('.declineForm').forEach(form => {
+        //form.addEventListener('submit', function(e){
+            //e.preventDefault();
 
-            const modal = this.closest('.modal');
-            const bookingCard = modal.id.replace('declineModal','bookingCard');
+            //const modal = this.closest('.modal');
+            //const bookingCard = modal.id.replace('declineModal','bookingCard');
 
-            fetch(this.action, {
-                method: 'POST',
-                headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
-                body: new FormData(this)
-            }).then(res => {
-                if(res.ok) {
-                    document.getElementById(bookingCard)?.remove();
+            //fetch(this.action, {
+                //method: 'POST',
+                //headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                //body: new FormData(this)
+            //}).then(res => {
+                //if(res.ok) {
+                    //document.getElementById(bookingCard)?.remove();
 
-                    const modalEl = bootstrap.Modal.getInstance(modal);
-                    modalEl?.hide();
-                }
-            });
-        });
-    });
+                    //const modalEl = bootstrap.Modal.getInstance(modal);
+                    //modalEl?.hide();
+                //}
+            //});
+        //});
+    //});
 
     // Delete = remove booking from DB + UI
+    /*
     document.querySelectorAll('.deleteForm').forEach(form => {
         form.addEventListener('submit', function(e){
             e.preventDefault();
@@ -281,6 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+    */
 
 });
 
