@@ -88,7 +88,7 @@ class BookingController extends Controller
             ? 'Your booking has been successfully received and automatically confirmed. Admin will review the GCash payment shortly.'
             : 'Your booking has been received. Please wait for admin confirmation. We will contact you shortly.';
 
-        return redirect()->back()->with('success', $message);
+        return redirect()->route('booking.create')->with('success', $message);
     }
 
     public function approve($id)
