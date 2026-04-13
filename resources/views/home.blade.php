@@ -111,7 +111,7 @@
             {{-- Div in the Right side --}}
             <div class="col-md-4 mt-5">
                 <div class="card shadow-lg p-4 w-100" style="max-width: 600px; border-radius: 15px;">
-                    <h5 class="text-center">How it startded?</h5>
+                    <h5 class="text-center">How it started?</h5>
                     <hr>
                     <p>JBrothers started as a group of friends who shared a 
                         passion for music and performance, and who wanted to establish 
@@ -132,7 +132,7 @@
                             <img src="{{ asset('image/JBoldpic.jpg') }}">
                         </a>
                     </div>
-                    <small>2018.</small>
+                    <small>2016.</small>
                     <p></p>
                     <p></p>
                     <p></p>
