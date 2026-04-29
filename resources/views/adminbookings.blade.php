@@ -352,7 +352,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <!-- MAILTO BUTTON (SAME STYLE AS SEND EMAIL) -->
                     <a class="btn btn-sm btn-success"
-                    href="mailto:jbrothersdbc@gmail.com?subject=Booking%20Inquiry%20-%20JBrothers%20DBC&body=Hello%20JBrothers%20DBC,%0D%0A%0D%0AI%20would%20like%20to%20inquire%20about%20a%20booking.%0D%0A%0D%0AName:%0D%0AEvent:%0D%0ADate:%0D%0ATime:%0D%0A%0D%0AThank%20you.">
+                    target="_blank"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=jbrothersdbc@gmail.com&su=Booking%20Inquiry%20-%20JBrothers%20DBC&body=Hello%20JBrothers%20DBC,%0D%0A%0D%0AI%20would%20like%20to%20inquire%20about%20a%20booking.%0D%0A%0D%0AName:%0D%0AEvent:%0D%0ADate:%0D%0ATime:%0D%0A%0D%0AThank%20you.">
                         Send Email
                     </a>
 
@@ -376,8 +377,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <strong>{{ $booking->full_name }}</strong><br>
                                 <small>{{ $booking->event_name }} | {{ $booking->event_date }}</small><br>
 
-                                <a class="btn btn-sm btn-primary mt-1"
-                                    href="mailto:{{ $booking->email }}?subject=Booking%20Update%20-%20JBrothers%20DBC&body=Hello%20{{ $booking->full_name }},%0D%0A%0D%0AYour%20booking%20is%20currently%20PENDING.%0D%0AEvent:%20{{ $booking->event_name }}%0D%0ADate:%20{{ $booking->event_date }}">
+                                <a class="btn btn-sm btn-success"
+                                target="_blank"
+                                href="https://mail.google.com/mail/?view=cm&fs=1&to=jbrothersdbc@gmail.com&su=Booking%20Inquiry%20-%20JBrothers%20DBC&body=Hello%20JBrothers%20DBC,%0D%0A%0D%0AI%20would%20like%20to%20inquire%20about%20a%20booking.%0D%0A%0D%0AName:%0D%0AEvent:%0D%0ADate:%0D%0ATime:%0D%0A%0D%0AThank%20you.">
                                     Send Email
                                 </a>
 
