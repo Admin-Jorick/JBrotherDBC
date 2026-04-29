@@ -330,11 +330,108 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 </script>
 
-    <!-- Floating Book Now Button -->
-    <button id="adminBookNowBtn" class="btn btn-primary position-fixed" 
-            style="bottom:30px; right:30px; z-index:1050;">
-        Book Now
-    </button>
+<!-- Floating Email Button -->
+<button class="btn btn-success position-fixed"
+        data-bs-toggle="modal"
+        data-bs-target="#emailModal"
+        style="bottom:30px; right:180px; z-index:1050;">
+    Email
+</button>
+
+<div class="modal fade" id="emailModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- HEADER (WITH RIGHT SIDE COMPOSE BUTTON) -->
+            <div class="modal-header">
+
+                <div class="d-flex justify-content-between align-items-center w-100">
+
+                    <!-- TITLE -->
+                    <h5 class="modal-title mb-0">📧 Email Requests</h5>
+
+                    <!-- MAILTO BUTTON (SAME STYLE AS SEND EMAIL) -->
+                    <a class="btn btn-sm btn-success"
+                    href="mailto:jbrothersdbc@gmail.com?subject=Booking%20Inquiry%20-%20JBrothers%20DBC&body=Hello%20JBrothers%20DBC,%0D%0A%0D%0AI%20would%20like%20to%20inquire%20about%20a%20booking.%0D%0A%0D%0AName:%0D%0AEvent:%0D%0ADate:%0D%0ATime:%0D%0A%0D%0AThank%20you.">
+                        Send Email
+                    </a>
+
+                </div>
+
+                <button type="button" class="btn-close ms-3" data-bs-dismiss="modal"></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <!-- SEARCH -->
+                <input type="text" id="emailSearch" class="form-control mb-3" placeholder="Search booking...">
+
+                <!-- PENDING -->
+                <h6 class="text-warning">🟡 Pending Bookings</h6>
+                <div id="pendingList">
+                    @foreach($bookings as $booking)
+                        @if($booking->status == 'pending')
+                            <div class="email-item mb-2 p-2 border rounded">
+                                <strong>{{ $booking->full_name }}</strong><br>
+                                <small>{{ $booking->event_name }} | {{ $booking->event_date }}</small><br>
+
+                                <a class="btn btn-sm btn-primary mt-1"
+                                    href="mailto:{{ $booking->email }}?subject=Booking%20Update%20-%20JBrothers%20DBC&body=Hello%20{{ $booking->full_name }},%0D%0A%0D%0AYour%20booking%20is%20currently%20PENDING.%0D%0AEvent:%20{{ $booking->event_name }}%0D%0ADate:%20{{ $booking->event_date }}">
+                                    Send Email
+                                </a>
+
+                                <!-- DONE BUTTON -->
+                                <button type="button"
+                                    class="btn btn-sm btn-secondary mt-1"
+                                    onclick="this.closest('.email-item').remove()">
+                                    Done
+                                </button>
+
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+
+                <hr>
+
+                <!-- APPROVED / CONFIRMED -->
+                <h6 class="text-success">🟢 Approved / Confirmed</h6>
+                <div id="approvedList">
+                    @foreach($bookings as $booking)
+                        @if(in_array($booking->status, ['approved','confirmed']))
+                            <div class="email-item mb-2 p-2 border rounded">
+                                <strong>{{ $booking->full_name }}</strong><br>
+                                <small>{{ $booking->event_name }} | {{ $booking->event_date }}</small><br>
+
+                                <a class="btn btn-sm btn-success mt-1"
+                                    href="mailto:{{ $booking->email }}?subject=Booking%20Confirmed%20-%20JBrothers%20DBC&body=Hello%20{{ $booking->full_name }},%0D%0A%0D%0AYour%20booking%20has%20been%20CONFIRMED.%0D%0AEvent:%20{{ $booking->event_name }}%0D%0ADate:%20{{ $booking->event_date }}">
+                                    Send Email
+                                </a>
+
+                                <!-- DONE BUTTON -->
+                                <button type="button"
+                                    class="btn btn-sm btn-secondary mt-1"
+                                    onclick="this.closest('.email-item').remove()">
+                                    Done
+                                </button>
+
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Floating Book Now Button -->
+<button id="adminBookNowBtn" class="btn btn-primary position-fixed"
+        style="bottom:30px; right:30px; z-index:1050;">
+    Book Now
+</button>
 
     <!-- Floating Admin Booking Form -->
     <div id="adminBookNowForm" class="card p-4 shadow-lg position-fixed" 
@@ -423,5 +520,28 @@ document.addEventListener('DOMContentLoaded', () => {
         </form>
     </div>
 </body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchInput = document.getElementById("emailSearch");
+    const items = document.querySelectorAll(".email-item");
+
+    searchInput.addEventListener("keyup", function () {
+        const value = this.value.toLowerCase();
+
+        items.forEach(item => {
+            const text = item.innerText.toLowerCase();
+
+            if (text.includes(value)) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    });
+
+});
+</script>
 
 </html>
